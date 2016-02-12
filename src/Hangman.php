@@ -6,12 +6,15 @@
             $this->word = $word;
         }
 
-
-
         function getWord() {
             return $this->word;
         }
 
+        function wordToDashes($word) {
+            $wordArray = str_split($word);
+            $dashWord = str_replace($wordArray, "-");
+            return $dashWord;
+        }
 
         // function checkletteragainst word {
         //

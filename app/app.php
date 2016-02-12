@@ -14,6 +14,9 @@
     $app->get('/', function() use ($app) {
         $hangman_word = randomWord();
         $hangman_game = new Hangman($hangman_word);
+        $newWord = $hangman_game->getWord();
+        $dashes = $hangman_game->wordToDashes($newWord);
+        echo $dashes;
         return $app['twig']->render('index.html.twig', array('game'=> $hangman_game));
     });
 
